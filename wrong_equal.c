@@ -27,15 +27,11 @@ void dump(unsigned char *byte)
 
 void equal(double precision)
 {
-    double A = 26523.70;
+    double A;
     double B;
-    int i;
 
-    B = 26500.0;
-    for (i=0; i<395; i++)
-    {
-        B += (60.0 / 1000);
-    }
+    A = 17.4 / 0.05;
+    B = 17.4 * 20;
 
     printf("A = %lf\n", A);
     printf("B = %lf\n", B);
@@ -61,15 +57,11 @@ void equal(double precision)
 
 void notequal(void)
 {
-    double A = 26523.70;
+    double A;
     double B;
-    int i;
 
-    B = 26500.0;
-    for (i=0; i<395; i++)
-    {
-        B += (60.0 / 1000);
-    }
+    A = 17.4 / 0.05;
+    B = 17.4 * 20;
 
     printf("A = %lf\n", A);
     printf("B = %lf\n", B);
