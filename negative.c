@@ -3,6 +3,10 @@
 
 
 signed short g_neg[] = {
+   32767,
+   16384,
+   255,
+   1,
    -1,
    -2,
    -3,
@@ -26,6 +30,8 @@ int main()
     char sign;
     int i;
 
+    printf("16-bit signed integer:\n");
+    printf("   Hex     Dec  Sign  Abs\n");
     for (i=0; i<(sizeof(g_neg)/sizeof(signed short)); i++)
     {
         if (g_neg[i] & 0x8000)
@@ -40,7 +46,7 @@ int main()
         }
 
         printf(
-            "0x%02x%02x:  %+6d, %c%u\n",
+            "0x%02x%02x  %6d    %c   %u\n",
             ((g_neg[i] >> 8) & 0xFF),
             ((g_neg[i]     ) & 0xFF),
             g_neg[i],
@@ -48,6 +54,7 @@ int main()
             abs
         );
     }
+    printf("\n");
 
     return 0;
 }

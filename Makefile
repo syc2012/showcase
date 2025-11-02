@@ -1,8 +1,8 @@
 CC = gcc
 
-APPS  = ambiguous alignmemt arrayindex cpu_speed
-APPS += float_inf float_nan for_loop fra2bin if_indent
-APPS +=  memory_leak negative network_order
+APPS  = ambiguous alignmemt arrayindex bytes_to_i32 cpu_speed
+APPS += float_inf float_nan float_precision for_loop fra2bin if_indent
+APPS += memory_leak negative network_order
 APPS += proc_maps ptr_array quine spin stdin system_bg
 APPS += tcp_mass_data_client tcp_mass_data_server tick_msec time_stamp
 APPS += wrong_atan2 wrong_constant wrong_equal wrong_mod wrong_mul wrong_mul.fast
@@ -23,10 +23,16 @@ arrayindex: arrayindex.c
 cpu_speed: cpu_speed.c
 	$(CC) $< -Wall -o $@
 
+bytes_to_i32: bytes_to_i32.c
+	$(CC) $< -Wall -o $@
+
 float_inf: float_inf.c
 	$(CC) $< -Wall -lm -o $@
 
 float_nan: float_nan.c
+	$(CC) $< -Wall -lm -o $@
+
+float_precision: float_precision.c
 	$(CC) $< -Wall -lm -o $@
 
 for_loop: for_loop.c
